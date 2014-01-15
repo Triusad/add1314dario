@@ -1,0 +1,162 @@
+<chapter>
+	<title>Acceso Remoto</title>
+	<para>Acceso Remoto</para>
+	<section>
+		<title>VNC</title>
+		<para>
+			Instalamos el VNC en el servidor.
+		</para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" format="PNG" fileref="../img/VNC/vnc_server.png"/>
+			</imageobject>
+		</mediaobject>
+		<para>
+			E instalamos el VNC en los clientes, y lo probamos.
+		</para>
+		<para>
+			Windows - Windows.
+		</para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" format="PNG" fileref="../img/VNC/conexionCliServWind.png"/>
+			</imageobject>
+		</mediaobject>
+		<para>
+			Linux - Windows.
+		</para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" format="PNG" fileref="../img/VNC/conexionLinWin.png"/>
+			</imageobject>
+		</mediaobject>
+		<para>
+			Windows - Linux.
+		</para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" format="PNG" fileref="../img/VNC/conexionWinLin.png"/>
+			</imageobject>
+		</mediaobject>
+	</section>
+	<section>
+	<title>Escritorio Remoto</title>
+	<para>
+		Habilitamos el Escritorio remoto en ambas máquinas y lo probamos.
+	</para>
+	<para>
+		Ubuntu - Ubuntu.
+	</para>
+	<mediaobject>
+		<imageobject>
+			<imagedata align="center" scale="60" format="PNG" fileref="../img/EscRemot/er_ubub.png"/>
+		</imageobject>
+	</mediaobject>
+	<para>
+		Windows - Windows.
+	</para>
+	<mediaobject>
+		<imageobject>
+			<imagedata align="center" scale="60" format="PNG" fileref="../img/EscRemot/er_winwin.png"/>
+		</imageobject>
+	</mediaobject>
+	<para>
+	Knopixx - Windows.
+	</para>
+	<mediaobject>
+		<imageobject>
+			<imagedata align="center" scale="60" format="PNG" fileref="../img/EscRemot/ar_knopixx-win.png"/>
+		</imageobject>
+	</mediaobject>
+	</section>
+	<section>
+		<title>Servidor de Terminales</title>
+	<para>
+		Instalamos El Terminal Server en nuestro servidor.
+	</para>
+	<mediaobject>
+		<imageobject>
+			<imagedata align="center" scale="60" format="PNG" fileref="../img/termServices/instalacion.png"/>
+		</imageobject>
+	</mediaobject>
+	<para>
+		Configuramos un usuario para usarlo como loggin desde el cliente.
+	</para>
+	<mediaobject>
+		<imageobject>
+			<imagedata align="center" scale="60" format="PNG" fileref="../img/termServices/configuracionUsuario.png"/>
+		</imageobject>
+	</mediaobject>
+	<para>
+		Y probamos las conexiones desde los equipos cliente.
+	</para>
+	<para>
+		Desde Windows.
+	</para>
+	<mediaobject>
+		<imageobject>
+			<imagedata align="center" scale="60" format="PNG" fileref="../img/termServices/conexionClienteTerminalServer.png"/>
+		</imageobject>
+	</mediaobject>
+	<para>
+		Desde Linux.
+	</para>
+	<mediaobject>
+		<imageobject>
+			<imagedata align="center" scale="60" format="PNG" fileref="../img/termServices/conexionLinWindows.png"/>
+		</imageobject>
+	</mediaobject>
+	</section>
+	<section>
+		<title>Aplicaciones remotas</title>
+	<para>
+		Comenzamos con una instalación limpia del winserver2008 e instalamos el terminalservices.
+		Posteriormente creamos un usuario específico para realizar las pruebas (en este caso TS1).
+	</para>
+	<mediaobject>
+		<imageobject>
+			<imagedata align="center" scale="60" format="PNG" fileref="../img/remoteApp/scsht.png"/>
+		</imageobject>
+	</mediaobject>
+	<para>
+		Vamos a la administración de Terminal Services.
+	</para>
+	<mediaobject>
+		<imageobject>
+			<imagedata align="center" scale="60" format="PNG" fileref="../img/remoteApp/configWserver.png"/>
+		</imageobject>
+	</mediaobject>
+	<para>
+		Y creamos el archivo RDP, nos debemos asegurar de quitar el requerimiento de autenticación.
+	</para>
+	<mediaobject>
+		<imageobject>
+			<imagedata align="center" scale="60" format="PNG" fileref="../img/remoteApp/rdp.png"/>
+		</imageobject>
+	</mediaobject>
+	<para>
+		Llevamos el archivo RDP a una máquina cliente y lo probamos.
+	</para>
+	<para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" format="PNG" fileref="../img/remoteApp/geany.png"/>
+			</imageobject>
+		</mediaobject>
+	</para>
+	<para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" format="PNG" fileref="../img/remoteApp/geany2.png"/>
+			</imageobject>
+		</mediaobject>
+	</para>
+	<para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" format="PNG" fileref="../img/remoteApp/geany3.png"/>
+			</imageobject>
+		</mediaobject>
+	</para>
+	</section>
+</chapter>

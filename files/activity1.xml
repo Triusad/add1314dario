@@ -1,0 +1,167 @@
+<chapter>
+	<title>Acceso Remoto con SSH Dario</title>
+	<para>Acceso Remoto con SSH Dario</para>
+	
+	<section>
+		<title>Servidor Win2k8</title>
+		
+		<para>Configuramos un Windows 2008 Server como servidor SSH. Añadir el usuario “Dario” con apellidos “marrero glez” DNI como contraseña, reiniciamos y al entrar con el usuario Dario comenzamos la práctica.
+
+Cambiamos el nombre de la máquina a “SSH-SERVER-DMG”(Darío Marrero Glez) y el grupo de trabajo “MARRERO”.</para>
+
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Win2k8-config.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+		
+	</section>
+	
+	<section>
+	
+		<title>Paso 1</title>
+		<para>En primer lugar instalamos "freesshd". Seguidamente creamos 4 usuarios en freesshd "remoteuser1, remoteuser2, remoteuser3, remoteuser4" todos con clave "12345" y todos los permisos.</para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Win2k8-ssh-users.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Win2k8-ssh-user-properties.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+
+    </section>
+    <section>
+	
+		<title>Paso 2</title>
+		<para>En la configuración del freesshd la dejamos por defecto,
+		 puede que nos de error al iniciar y la solucion es cambiarle el puerto.</para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Win2k8-ssh-parametros.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+
+    </section>
+    <section>
+	
+		<title>Paso 3</title>
+		<para>La pestaña de autenticacion la dejamos como en la imagen.</para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Win2k8-ssh-autentication.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+
+    </section>
+    <section>
+	
+		<title>Paso 4</title>
+		<para>Por ultimo vamos a la pestaña de estatus y activamos el freesshd.</para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Win2k8-ssh-status.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+
+    </section>
+
+	<section>
+		<title>Configurar el cliente Debian-6</title>
+		
+		<para>Configuramos un Debian-6 como cliente SSH. Ponemos como nombre de usuario "dario" con dni como clave,
+		  tambien con el usuario root, nombre del equipo "ssh-client" y como nombre de dominio "marrero". 
+		  Añadir en /etc/hosts el equipo ssh-server-dmg, y ssh-client2.</para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Deb6-hosts.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Deb6-hostname.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+    </section>
+    
+	<section>
+		<title>Configurar el cliente Windows 7</title>
+		
+		<para> Instalamos el software "Putty"</para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Win7-putty.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+    </section>
+	<section>
+		<title>Configurando el cliente Windows 7</title>
+		
+		<para> Añadimos en C:\Windows\System32\drivers\etc\hosts el equipo ssh-server-dmg y ssh-client.</para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Win7-cliente-hosts.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+    </section>
+
+	<section>
+		<title>Verificando Servicio</title>
+		
+		<para> Desde el propio servidor comprobamos que el servicio esta en ejecucion.</para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Win2k8-ssh-status.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+    </section>
+
+	<section>
+		<title>Comprobando desde cada cliente</title>
+		
+		<para> Comprobamos el funcionamiento de la conexión SSH desde cada cliente usando remoteuser1 y
+		 Capturamos la clave intercambiada en el primer proceso de conexión.</para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Win7-putty-conectado.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Win7-clave-capturada.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Deb6-clave-acceso.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Deb6-conexion.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+    </section>
+    
+    
+   	<section>
+		<title>Comprobamos el fichero known_hosts en el cliente.</title>
+		
+		<para> Podemos observar que la clave almacenada es la que se utiliza para autenticar el servicio,
+		por lo tanto en el momento que el servidor cambie la clave(posible "man in the middle") nos mostrará el mismo mensaje
+		 de clave desconocida que en la primera conexion.</para>
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="60" fileref="../img/Deb6-known-hosts.png" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+    </section>
+
+
+
+
+</chapter>
+
+

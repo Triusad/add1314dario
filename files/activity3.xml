@@ -1,0 +1,87 @@
+<chapter>
+	<title>Clientes Ligeros LTSP Dario</title>
+	<para>Clientes Ligeros LTSP Dario</para>
+	
+	<section>
+		<title>Servidor LTSP</title>
+		
+		<para>La MV del servidor necesitará dos interfaces de red. Una externa, para comunicarse con Internet(adaptador puente).
+		 Y una interna para conectarse con los clientes ligeros.
+		 La IP de esta interfaz de red debe ser estática y debe estar en la misma red que los clientes(red interna).</para>
+
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="80" fileref="../img/LTSP/Captura1.PNG" format="PNG"/>
+			</imageobject>
+		</mediaobject>
+		
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="80" fileref="../img/LTSP/Captura2.PNG" format="PNG"/>
+			</imageobject>
+		</mediaobject>		
+	</section>
+	
+	<section>
+		<title>Instalación del Servidor</title>
+		
+		<para>Procedemos a instalar la máquina con la configuracion de red anterior.
+		 Para ello empleamos una iso de ubuntu 12.0.4 e instalamos con el modo de LTSP para que al finalizar la instalación
+		 del operativo continúe con la instalación y configuración por defecto de un servidor LTSP.</para>
+
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="80" fileref="../img/LTSP/Captura3.PNG" format="PNG"/>
+			</imageobject>
+		</mediaobject>		
+	</section>
+
+	<section>
+		<title>Añadiendo Usuarios</title>
+		
+		<para>Una vez terminada la instalación creamos 3 usuarios y reiniciamos.</para>
+
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="80" fileref="../img/LTSP/Captura4.PNG" format="PNG"/>
+			</imageobject>
+		</mediaobject>		
+	</section>
+
+	<section>
+		<title>Configurando y Arrancando Cliente</title>
+		
+		<para>Preparamos otra máquina de VirtualBox para ser cliente ligero, por lo que no tendrá disco duro ni dvd, sólo 
+		dispondrá de memoria ram y disquetera, tarjeta de red PXE en red interna y iniciamos.</para>
+
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="80" fileref="../img/LTSP/Captura7.PNG" format="PNG"/>
+			</imageobject>
+		</mediaobject>		
+
+	
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="80" fileref="../img/LTSP/Captura6.PNG" format="PNG"/>
+			</imageobject>
+		</mediaobject>		
+
+	</section>
+	
+	<section>
+		<title>Comprobación Comando "arp"</title>
+		
+		<para>En la máquina del servidor habrimos una consola, entramos en modo root y ejecutamos "arp".</para>
+
+		<mediaobject>
+			<imageobject>
+				<imagedata align="center" scale="80" fileref="../img/LTSP/Captura5.PNG" format="PNG"/>
+			</imageobject>
+		</mediaobject>		
+
+	</section>
+
+</chapter>
+
+
